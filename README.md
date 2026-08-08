@@ -110,6 +110,10 @@ ProjectMate/
 
 ![Student Dashboard](screenshots/student-dashboard.png)
 
+### Student Profile
+
+![Student Profile](screenshots/student-profile.png)
+
 ## Installation and Setup
 
 ### 1. Clone the Repository
