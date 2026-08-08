@@ -100,6 +100,11 @@ ProjectMate/
     ├── admin_dashboard.html
     └── ...
 ```
+## Screenshots
+
+### Home Page
+
+![ProjectMate Home Page](screenshots/home.png)
 
 ## Installation and Setup
 
