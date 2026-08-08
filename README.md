@@ -118,6 +118,10 @@ ProjectMate/
 
 ![Student Skills](screenshots/student-skills.png)
 
+### Team Suggestion
+
+![Team Suggestion](screenshots/team-suggestion.png)
+
 ## Installation and Setup
 
 ### 1. Clone the Repository
