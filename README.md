@@ -114,6 +114,10 @@ ProjectMate/
 
 ![Student Profile](screenshots/student-profile.png)
 
+### Student Skills
+
+![Student Skills](screenshots/student-skills.png)
+
 ## Installation and Setup
 
 ### 1. Clone the Repository
