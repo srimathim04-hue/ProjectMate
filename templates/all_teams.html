@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>All Teams - ProjectMate</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <h2>
+            ProjectMate
+        </h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('student_dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('create_team') }}">
+                Create Team
+            </a>
+
+            <a href="{{ url_for('my_team') }}">
+                My Team
+            </a>
+
+            <a href="{{ url_for('student_logout') }}">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <h1>
+            All Teams
+        </h1>
+
+        <p>
+            View all project teams available in ProjectMate.
+        </p>
+
+
+        {% if teams %}
+
+            <div class="team-grid">
+
+                {% for team in teams %}
+
+                    <div class="team-card">
+
+                        <h2>
+                            {{ team["team_name"] }}
+                        </h2>
+
+                        <p>
+                            <strong>
+                                Team Members:
+                            </strong>
+
+                            {{ team["member_count"] }}
+                        </p>
+
+                        <a href="{{ url_for(
+                           'view_team',
+                            team_id=team['id']
+                        ) }}">
+
+                            <button type="button">
+                                View Team
+                            </button>
+
+                        </a>
+
+                    <a href="{{ url_for(
+                        'join_team',
+                        team_id=team['id']
+                    ) }}">
+                        <button type="button">
+                            Join Team
+                        </button>
+                    </a>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <p>
+                No teams available yet.
+            </p>
+
+        {% endif %}
+
+        <br>
+
+        <a href="{{ url_for('student_dashboard') }}">
+            Back to Dashboard
+        </a>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 ProjectMate | Smart Project Team Formation &
+            Collaboration System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

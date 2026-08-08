@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Teams - ProjectMate</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h2>ProjectMate</h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('admin_dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('admin_students') }}">
+                Students
+            </a>
+
+            <a href="{{ url_for('admin_faculty') }}">
+                Faculty
+            </a>
+
+            <a href="{{ url_for('admin_teams') }}">
+                Teams
+            </a>
+
+            <a href="{{ url_for('admin_projects') }}">
+                Projects
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Manage Teams Section -->
+
+    <main>
+
+        <section>
+
+            <h1>
+                Manage Teams
+            </h1>
+
+            <p>
+                View all project teams in ProjectMate.
+            </p>
+
+        </section>
+
+
+        <!-- Teams List -->
+
+        <section>
+
+            {% if teams %}
+
+                {% for team in teams %}
+
+                    <div class="card">
+
+                        <h3>
+                            {{ team["team_name"] }}
+                        </h3>
+
+                        <p>
+                            <strong>Team ID:</strong>
+                            {{ team["id"] }}
+                        </p>
+
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="card">
+
+                    <p>
+                        No teams available yet.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- Back to Dashboard -->
+
+        <p>
+
+            <a href="{{ url_for('admin_dashboard') }}">
+                Back to Admin Dashboard
+            </a>
+
+        </p>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 ProjectMate |
+            Smart Project Team Formation &
+            Collaboration System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

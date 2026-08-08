@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Details</title>
+</head>
+
+<body>
+
+    <h1>Project Details</h1>
+
+    <h2>{{ project["project_name"] }}</h2>
+
+    <p>
+        <strong>Team:</strong>
+        {{ project["team_name"] }}
+    </p>
+
+    <p>
+        <strong>Description:</strong>
+        {{ project["description"] }}
+    </p>
+
+    <p>
+        <strong>Start Date:</strong>
+        {{ project["start_date"] }}
+    </p>
+
+    <p>
+        <strong>End Date:</strong>
+        {{ project["end_date"] }}
+    </p>
+
+    <p>
+    <strong>Status:</strong>
+    {% if total_tasks > 0 and completed_tasks == total_tasks %}
+        Completed
+    {% elif in_progress_tasks > 0 %}
+        In Progress
+    {% else %}
+        Not Started
+    {% endif %}
+    </p>
+
+    <hr>
+
+    <hr>
+
+<h2>Project Progress</h2>
+
+<p>
+    <strong>Project Status:</strong>
+    {{ project_status }}
+</p>
+
+<p>
+    <strong>Total Tasks:</strong>
+    {{ total_tasks }}
+</p>
+
+<p>
+    <strong>Completed Tasks:</strong>
+    {{ completed_tasks }}
+</p>
+
+<p>
+    <strong>In Progress Tasks:</strong>
+    {{ in_progress_tasks }}
+</p>
+
+<p>
+    <strong>Pending Tasks:</strong>
+    {{ pending_tasks }}
+</p>
+
+<p>
+    <strong>Progress:</strong>
+    {{ progress }}%
+</p>
+
+<progress
+    value="{{ progress }}"
+    max="100">
+</progress>
+
+<hr>
+
+    <h2>Project Tasks</h2>
+
+<a href="{{ url_for('create_task', project_id=project['id']) }}">
+    <button>Create New Task</button>
+</a>
+
+<hr>
+
+<h2>Faculty Feedback</h2>
+
+<a href="{{ url_for('add_feedback', project_id=project['id']) }}">
+    <button>Add Feedback</button>
+</a>
+
+{% if feedbacks %}
+
+    {% for feedback in feedbacks %}
+
+        <div>
+
+            <p>
+                <strong>Faculty:</strong>
+                {{ feedback["faculty_name"] }}
+            </p>
+
+            <p>
+                <strong>Feedback:</strong>
+                {{ feedback["feedback_text"] }}
+            </p>
+
+            <p>
+                <strong>Rating:</strong>
+                {{ feedback["rating"] }}/5
+            </p>
+
+            <p>
+                <strong>Date:</strong>
+                {{ feedback["created_at"] }}
+            </p>
+
+        </div>
+
+        <hr>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>No feedback available yet.</p>
+
+{% endif %}
+
+    {% if tasks %}
+
+        {% for task in tasks %}
+
+            <div>
+
+                <h3>
+                    {{ task["task_name"] }}
+                </h3>
+
+                <p>
+                    Description:
+                    {{ task["description"] }}
+                </p>
+
+                <p>
+                    Assigned To:
+                    {{ task["assigned_student"] or "Not Assigned" }}
+                </p>
+
+                <p>
+    <strong>Status:</strong>
+    {{ task["status"] }}
+</p>
+
+<form
+    method="POST"
+    action="{{ url_for('update_task_status', task_id=task['id']) }}"
+>
+
+    <select name="status">
+
+        <option
+            value="Pending"
+            {% if task["status"] == "Pending" %}selected{% endif %}
+        >
+            Pending
+        </option>
+
+        <option
+            value="In Progress"
+            {% if task["status"] == "In Progress" %}selected{% endif %}
+        >
+            In Progress
+        </option>
+
+        <option
+            value="Completed"
+            {% if task["status"] == "Completed" %}selected{% endif %}
+        >
+            Completed
+        </option>
+
+    </select>
+
+    <button type="submit">
+        Update Status
+    </button>
+
+</form>
+
+                <p>
+                    Due Date:
+                    {{ task["due_date"] or "Not Set" }}
+                </p>
+
+            </div>
+
+            <hr>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No tasks created yet.</p>
+
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Project Team - ProjectMate</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h2>ProjectMate</h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('faculty_dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('faculty_projects') }}">
+                Projects
+            </a>
+
+            <a href="{{ url_for('student_logout') }}">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Project Team Section -->
+
+    <main>
+
+        <!-- Project Information -->
+
+        <section class="card">
+
+            <h1>
+                Project Team
+            </h1>
+
+            <h2>
+                {{ project["project_name"] }}
+            </h2>
+
+            <p>
+                <strong>Team:</strong>
+                {{ project["team_name"] }}
+            </p>
+
+        </section>
+
+
+        <!-- Team Members -->
+
+        <section>
+
+            <h2>
+                Team Members
+            </h2>
+
+            {% if members %}
+
+                {% for member in members %}
+
+                    <div class="card">
+
+                        <h3>
+                            {{ member["name"] }}
+                        </h3>
+
+                        <p>
+                            <strong>Email:</strong>
+                            {{ member["email"] }}
+                        </p>
+
+                        <p>
+                            <strong>Skills:</strong>
+
+                            {% if member["skills"] %}
+
+                                {{ member["skills"] }}
+
+                            {% else %}
+
+                                No skills added yet
+
+                            {% endif %}
+
+                        </p>
+
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="card">
+
+                    <p>
+                        No team members found.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- Faculty Actions -->
+
+        <section class="card">
+
+            <h2>
+                Faculty Actions
+            </h2>
+
+            <p>
+
+                <a href="{{ url_for(
+                    'add_feedback',
+                    project_id=project['id']
+                ) }}">
+
+                    <button type="button">
+                        Add Feedback
+                    </button>
+
+                </a>
+
+            </p>
+
+            <p>
+
+                <a href="{{ url_for('faculty_projects') }}">
+                    Back to All Projects
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 ProjectMate |
+            Smart Project Team Formation &
+            Collaboration System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

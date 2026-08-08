@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Team Suggestion - ProjectMate</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>Smart Team Suggestion</h1>
+
+    <h2>Selected Student</h2>
+
+    <p>
+        <strong>Name:</strong>
+        {{ student["name"] }}
+    </p>
+
+    <p>
+        <strong>Email:</strong>
+        {{ student["email"] }}
+    </p>
+
+    <h3>Skills</h3>
+
+    {% if skills %}
+        <ul>
+            {% for skill in skills %}
+                <li>{{ skill["skill_name"] }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No skills added yet.</p>
+    {% endif %}
+
+    <hr>
+
+    <h2>Suggested Team Members</h2>
+
+{% if suggested_students %}
+
+    {% for member in suggested_students %}
+
+        <div>
+            <h3>{{ member["name"] }}</h3>
+
+            <p>
+                Email: {{ member["email"] }}
+            </p>
+
+            <p>
+                Skills:
+                {{ member["skills"] or "No skills added yet" }}
+            </p>
+
+<a href="/add-to-team/{{ student['id'] }}/{{ member['id'] }}">
+    <button type="button">Add to Team</button>
+</a>
+
+            <hr>
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>No suitable team members found.</p>
+
+{% endif %}
+
+    <br>
+
+    <a href="/find-team">Back to Find Team</a>
+
+    <br><br>
+
+    <a href="/student-dashboard">Back to Dashboard</a>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Faculty Dashboard - ProjectMate</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h2>ProjectMate</h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('faculty_dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('faculty_projects') }}">
+                Projects
+            </a>
+
+            <a href="{{ url_for('student_logout') }}">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Dashboard -->
+
+    <main>
+
+        <!-- Welcome Section -->
+
+        <section>
+
+            <h1>
+                Welcome to Faculty Dashboard
+            </h1>
+
+            <p>
+                Welcome, {{ faculty["name"] }}!
+            </p>
+
+            <p>
+                Manage projects, monitor teams, and provide
+                valuable feedback to student teams.
+            </p>
+
+        </section>
+
+
+        <!-- Faculty Overview -->
+
+        <section class="card">
+
+            <h2>
+                Faculty Overview
+            </h2>
+
+            <p>
+                <strong>Total Projects:</strong>
+                {{ total_projects }}
+            </p>
+
+            <p>
+                <strong>Total Teams:</strong>
+                {{ total_teams }}
+            </p>
+
+            <p>
+                <strong>Feedback Given:</strong>
+                {{ total_feedback }}
+            </p>
+
+        </section>
+
+
+        <!-- Faculty Menu -->
+
+        <section class="card">
+
+            <h2>
+                Faculty Menu
+            </h2>
+
+            <p>
+                View student projects and provide feedback
+                to project teams.
+            </p>
+
+            <a href="{{ url_for('faculty_projects') }}">
+                <button>
+                    View Projects
+                </button>
+            </a>
+
+            <a href="{{ url_for('faculty_feedback') }}">
+                <button>
+                    Give Feedback
+                </button>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 ProjectMate |
+            Smart Project Team Formation &
+            Collaboration System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

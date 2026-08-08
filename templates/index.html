@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ProjectMate - Smart Project Collaboration</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- ==============================
+         Navigation Bar
+    =============================== -->
+
+    <nav>
+
+        <h2>
+            ProjectMate
+        </h2>
+
+        <div>
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="#how-it-works">
+                How It Works
+            </a>
+
+            <a href="#login">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ==============================
+         Hero Section
+    =============================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <p class="hero-tag">
+                SMART PROJECT TEAM FORMATION & COLLABORATION
+            </p>
+
+            <h1>
+                Build Better Teams.
+                <br>
+                Collaborate Smarter.
+            </h1>
+
+            <p class="hero-description">
+                ProjectMate helps students form suitable project teams,
+                manage projects, track tasks, collaborate with teammates,
+                and receive valuable faculty feedback.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/student-register">
+                    <button>
+                        Get Started
+                    </button>
+                </a>
+
+                <a href="#features">
+                    <button class="secondary-button">
+                        Explore Features
+                    </button>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             Features Section
+        =============================== -->
+
+        <section id="features"
+                 class="home-section">
+
+            <p class="section-tag">
+                POWERFUL FEATURES
+            </p>
+
+            <h2>
+                Everything You Need for Successful Projects
+            </h2>
+
+            <p>
+                ProjectMate brings team formation,
+                project management, collaboration,
+                and feedback together in one platform.
+            </p>
+
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        Smart Team Formation
+                    </h3>
+
+                    <p>
+                        Find suitable teammates based on
+                        skills and build effective project teams.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        📁
+                    </div>
+
+                    <h3>
+                        Project Management
+                    </h3>
+
+                    <p>
+                        Organize and manage your project
+                        details, deadlines, and progress.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ✅
+                    </div>
+
+                    <h3>
+                        Task Tracking
+                    </h3>
+
+                    <p>
+                        Track project tasks and monitor
+                        progress from start to completion.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        💬
+                    </div>
+
+                    <h3>
+                        Faculty Feedback
+                    </h3>
+
+                    <p>
+                        Receive valuable feedback and ratings
+                        from faculty members on your projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             How It Works
+        =============================== -->
+
+        <section id="how-it-works"
+                 class="home-section">
+
+            <p class="section-tag">
+                HOW IT WORKS
+            </p>
+
+            <h2>
+                Start Your Project Journey
+            </h2>
+
+            <p>
+                Follow a simple process to build your team
+                and successfully complete your project.
+            </p>
+
+
+            <div class="steps-grid">
+
+                <div class="step-card">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Register
+                    </h3>
+
+                    <p>
+                        Create your ProjectMate account
+                        and complete your profile.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Find Your Team
+                    </h3>
+
+                    <p>
+                        Discover students with different
+                        skills and build your project team.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Manage Projects
+                    </h3>
+
+                    <p>
+                        Work together, manage tasks,
+                        and track your project progress.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <span>
+                        04
+                    </span>
+
+                    <h3>
+                        Get Feedback
+                    </h3>
+
+                    <p>
+                        Receive faculty feedback and
+                        improve your project outcomes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             Login Section
+        =============================== -->
+
+        <section id="login"
+                 class="login-section">
+
+            <p class="section-tag">
+                GET STARTED
+            </p>
+
+            <h2>
+                Choose Your ProjectMate Portal
+            </h2>
+
+            <p>
+                Select your role to access your personalized dashboard.
+            </p>
+
+
+            <div class="login-grid">
+
+                <div class="login-card">
+
+                    <div class="login-icon">
+                        🎓
+                    </div>
+
+                    <h3>
+                        Student
+                    </h3>
+
+                    <p>
+                        Build teams, manage projects,
+                        track tasks, and collaborate.
+                    </p>
+
+                    <a href="/student-login">
+
+                        <button>
+                            Student Login
+                        </button>
+
+                    </a>
+
+                </div>
+
+
+                <div class="login-card">
+
+                    <div class="login-icon">
+                        👩‍🏫
+                    </div>
+
+                    <h3>
+                        Faculty
+                    </h3>
+
+                    <p>
+                        Monitor projects, view teams,
+                        and provide valuable feedback.
+                    </p>
+
+                    <a href="/faculty-login">
+
+                        <button>
+                            Faculty Login
+                        </button>
+
+                    </a>
+
+                </div>
+
+
+                <div class="login-card">
+
+                    <div class="login-icon">
+                        👨‍💼
+                    </div>
+
+                    <h3>
+                        Admin
+                    </h3>
+
+                    <p>
+                        Manage students, faculty,
+                        teams, and projects.
+                    </p>
+
+                    <a href="/admin-login">
+
+                        <button>
+                            Admin Login
+                        </button>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         Footer
+    =============================== -->
+
+    <footer>
+
+        <h3>
+            ProjectMate
+        </h3>
+
+        <p>
+            Smart Project Team Formation &
+            Collaboration System
+        </p>
+
+        <p>
+            © 2026 ProjectMate.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

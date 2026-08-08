@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Faculty Registration - ProjectMate</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h2>ProjectMate</h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('faculty_login') }}">
+                Faculty Login
+            </a>
+
+            <a href="{{ url_for('faculty_register') }}">
+                Register
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Registration Section -->
+
+    <main>
+
+        <section class="card">
+
+            <h1>
+                Faculty Registration
+            </h1>
+
+            <p>
+                Create your faculty account to access ProjectMate.
+            </p>
+
+
+            <!-- Registration Form -->
+
+            <form method="POST">
+
+                <label>
+                    Full Name:
+                </label>
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label>
+                    Email:
+                </label>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label>
+                    Password:
+                </label>
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                >
+
+
+                <label>
+                    Confirm Password:
+                </label>
+
+                <input
+                    type="password"
+                    name="confirm_password"
+                    placeholder="Confirm your password"
+                    required
+                >
+
+
+                <button type="submit">
+                    Register
+                </button>
+
+            </form>
+
+
+            <!-- Login Link -->
+
+            <p>
+                Already have an account?
+
+                <a href="{{ url_for('faculty_login') }}">
+                    Login Here
+                </a>
+            </p>
+
+
+            <!-- Back to Home -->
+
+            <p>
+
+                <a href="{{ url_for('home') }}">
+                    Back to Home
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 ProjectMate |
+            Smart Project Team Formation &
+            Collaboration System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

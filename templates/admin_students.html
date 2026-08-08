@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Students - ProjectMate</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h2>ProjectMate</h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('admin_dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('admin_students') }}">
+                Students
+            </a>
+
+            <a href="{{ url_for('admin_faculty') }}">
+                Faculty
+            </a>
+
+            <a href="{{ url_for('admin_teams') }}">
+                Teams
+            </a>
+
+            <a href="{{ url_for('admin_projects') }}">
+                Projects
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Manage Students Section -->
+
+    <main>
+
+        <section>
+
+            <h1>
+                Manage Students
+            </h1>
+
+            <p>
+                View all registered students in ProjectMate.
+            </p>
+
+        </section>
+
+
+        <!-- Student List -->
+
+        <section>
+
+            {% if students %}
+
+                {% for student in students %}
+
+                    <div class="card">
+
+                        <h3>
+                            {{ student["name"] }}
+                        </h3>
+
+                        <p>
+                            <strong>Email:</strong>
+                            {{ student["email"] }}
+                        </p>
+
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="card">
+
+                    <p>
+                        No students registered yet.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- Back to Dashboard -->
+
+        <p>
+
+            <a href="{{ url_for('admin_dashboard') }}">
+                Back to Admin Dashboard
+            </a>
+
+        </p>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 ProjectMate |
+            Smart Project Team Formation &
+            Collaboration System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

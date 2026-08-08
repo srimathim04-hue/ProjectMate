@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Add Feedback - ProjectMate</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h2>ProjectMate</h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('faculty_dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('faculty_projects') }}">
+                Projects
+            </a>
+
+            <a href="{{ url_for('student_logout') }}">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Feedback Section -->
+
+    <main>
+
+        <section class="card">
+
+            <h1>
+                Faculty Feedback
+            </h1>
+
+            <h2>
+                {{ project["project_name"] }}
+            </h2>
+
+            <p>
+                Provide your feedback and rating for this project.
+            </p>
+
+
+            <!-- Feedback Form -->
+
+            <form method="POST">
+
+                <label>
+                    Feedback:
+                </label>
+
+                <textarea
+                    name="feedback_text"
+                    rows="6"
+                    placeholder="Enter your feedback about the project..."
+                    required
+                ></textarea>
+
+
+                <label>
+                    Rating:
+                </label>
+
+                <select name="rating" required>
+
+                    <option value="">
+                        Select Rating
+                    </option>
+
+                    <option value="1">
+                        1 - Poor
+                    </option>
+
+                    <option value="2">
+                        2 - Needs Improvement
+                    </option>
+
+                    <option value="3">
+                        3 - Average
+                    </option>
+
+                    <option value="4">
+                        4 - Good
+                    </option>
+
+                    <option value="5">
+                        5 - Excellent
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
+                    Submit Feedback
+                </button>
+
+            </form>
+
+
+            <!-- Back to Project Team -->
+
+            <p>
+
+                <a href="{{ url_for(
+                    'faculty_project_team',
+                    project_id=project['id']
+                ) }}">
+
+                    Back to Project Team
+
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 ProjectMate |
+            Smart Project Team Formation &
+            Collaboration System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

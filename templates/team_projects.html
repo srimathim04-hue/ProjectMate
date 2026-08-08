@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Projects</title>
+</head>
+
+<body>
+
+    <h1>Team Projects</h1>
+
+    <h2>{{ team["team_name"] }}</h2>
+
+    {% if projects %}
+
+        {% for project in projects %}
+
+            <hr>
+
+            <h2>{{ project["project_name"] }}</h2>
+
+            <p>
+                <strong>Description:</strong>
+                {{ project["description"] }}
+            </p>
+
+            <p>
+                <strong>Start Date:</strong>
+                {{ project["start_date"] }}
+            </p>
+
+            <p>
+                <strong>End Date:</strong>
+                {{ project["end_date"] }}
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                {{ project["status"] }}
+            </p>
+
+<a href="{{ url_for('project_details', project_id=project['id']) }}">
+    View Project
+</a>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No projects created yet.</p>
+
+    {% endif %}
+
+</body>
+</html>

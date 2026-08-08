@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Faculty Projects - ProjectMate</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h2>ProjectMate</h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('faculty_dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('faculty_projects') }}">
+                Projects
+            </a>
+
+            <a href="{{ url_for('student_logout') }}">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Faculty Projects Section -->
+
+    <main>
+
+        <section>
+
+            <h1>
+                All Projects
+            </h1>
+
+            <p>
+                View and manage projects assigned to student teams.
+            </p>
+
+        </section>
+
+
+        <!-- Project List -->
+
+        <section>
+
+            {% if projects %}
+
+                {% for project in projects %}
+
+                    <div class="card">
+
+                        <h2>
+                            {{ project["project_name"] }}
+                        </h2>
+
+                        <p>
+                            <strong>Team:</strong>
+                            {{ project["team_name"] }}
+                        </p>
+
+                        <p>
+                            <strong>Description:</strong>
+                            {{ project["description"] }}
+                        </p>
+
+                        <p>
+                            <strong>Start Date:</strong>
+                            {{ project["start_date"] }}
+                        </p>
+
+                        <p>
+                            <strong>End Date:</strong>
+                            {{ project["end_date"] }}
+                        </p>
+
+                        <p>
+                            <strong>Status:</strong>
+                            {{ project["status"] }}
+                        </p>
+
+
+                        <!-- View Team -->
+
+                        <p>
+
+                            <a href="{{ url_for(
+                                'faculty_project_team',
+                                project_id=project['id']
+                            ) }}">
+
+                                <button type="button">
+                                    View Team
+                                </button>
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="card">
+
+                    <p>
+                        No projects available yet.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- Back to Dashboard -->
+
+        <p>
+
+            <a href="{{ url_for('faculty_dashboard') }}">
+                Back to Faculty Dashboard
+            </a>
+
+        </p>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 ProjectMate |
+            Smart Project Team Formation &
+            Collaboration System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

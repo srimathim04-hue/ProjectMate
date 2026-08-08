@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Create New Team - ProjectMate</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <h1>Create New Team</h1>
+
+    <p>
+        Create a new project team and start collaborating
+        with your teammates.
+    </p>
+
+    <form method="POST">
+
+        <label>
+            Team Name:
+        </label>
+
+        <br>
+
+        <input
+            type="text"
+            name="team_name"
+            placeholder="Enter your team name"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">
+            Create Team
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="{{ url_for('student_dashboard') }}">
+        Back to Dashboard
+    </a>
+
+</body>
+
+</html>

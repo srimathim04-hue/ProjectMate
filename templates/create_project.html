@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Project</title>
+</head>
+
+<body>
+
+    <h1>Create Project</h1>
+
+    <h2>Team: {{ team["team_name"] }}</h2>
+
+    <form method="POST">
+
+        <label>Project Name:</label><br>
+        <input
+            type="text"
+            name="project_name"
+            required
+        >
+        <br><br>
+
+        <label>Description:</label><br>
+        <textarea
+            name="description"
+            rows="5"
+            cols="40"
+        ></textarea>
+        <br><br>
+
+        <label>Start Date:</label><br>
+        <input
+            type="date"
+            name="start_date"
+        >
+        <br><br>
+
+        <label>End Date:</label><br>
+        <input
+            type="date"
+            name="end_date"
+        >
+        <br><br>
+
+        <button type="submit">
+            Create Project
+        </button>
+
+    </form>
+
+</body>
+</html>

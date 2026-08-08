@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - ProjectMate</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h2>ProjectMate</h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('admin_dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('admin_students') }}">
+                Students
+            </a>
+
+            <a href="{{ url_for('admin_faculty') }}">
+                Faculty
+            </a>
+
+            <a href="{{ url_for('admin_teams') }}">
+                Teams
+            </a>
+
+            <a href="{{ url_for('admin_projects') }}">
+                Projects
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Dashboard -->
+
+    <main>
+
+        <!-- Welcome Section -->
+
+        <section>
+
+            <h1>
+                Welcome to Admin Dashboard
+            </h1>
+
+            <p>
+                Welcome, {{ admin["name"] }}!
+            </p>
+
+            <p>
+                Manage students, faculty, teams, and projects
+                from the ProjectMate administration panel.
+            </p>
+
+        </section>
+
+
+        <!-- Admin Overview -->
+
+        <section class="card">
+
+            <h2>
+                Admin Overview
+            </h2>
+
+            <p>
+                <strong>Total Students:</strong>
+                {{ total_students }}
+            </p>
+
+            <p>
+                <strong>Total Faculty:</strong>
+                {{ total_faculty }}
+            </p>
+
+            <p>
+                <strong>Total Teams:</strong>
+                {{ total_teams }}
+            </p>
+
+            <p>
+                <strong>Total Projects:</strong>
+                {{ total_projects }}
+            </p>
+
+        </section>
+
+
+        <!-- Admin Menu -->
+
+        <section class="card">
+
+            <h2>
+                Admin Menu
+            </h2>
+
+            <p>
+                Manage all major components of the
+                ProjectMate system.
+            </p>
+
+            <p>
+
+                <a href="{{ url_for('admin_students') }}">
+                    <button>
+                        Manage Students
+                    </button>
+                </a>
+
+            </p>
+
+            <p>
+
+                <a href="{{ url_for('admin_faculty') }}">
+                    <button>
+                        Manage Faculty
+                    </button>
+                </a>
+
+            </p>
+
+            <p>
+
+                <a href="{{ url_for('admin_teams') }}">
+                    <button>
+                        Manage Teams
+                    </button>
+                </a>
+
+            </p>
+
+            <p>
+
+                <a href="{{ url_for('admin_projects') }}">
+                    <button>
+                        Manage Projects
+                    </button>
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 ProjectMate |
+            Smart Project Team Formation &
+            Collaboration System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

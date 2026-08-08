@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>View Team - ProjectMate</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <h2>
+            ProjectMate
+        </h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('student_dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('all_teams') }}">
+                All Teams
+            </a>
+
+            <a href="{{ url_for('my_team') }}">
+                My Team
+            </a>
+
+            <a href="{{ url_for('student_logout') }}">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <h1>
+            {{ team["team_name"] }}
+        </h1>
+
+        <p>
+            <strong>
+                Team Members:
+            </strong>
+
+            {{ members|length }}
+        </p>
+
+        <hr>
+
+        <h2>
+            Team Members
+        </h2>
+
+
+        {% if members %}
+
+            {% for member in members %}
+
+                <div class="card">
+
+                    <h3>
+                        {{ member["name"] }}
+                    </h3>
+
+                    <p>
+                        <strong>Email:</strong>
+                        {{ member["email"] }}
+                    </p>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>
+                No members in this team yet.
+            </p>
+
+        {% endif %}
+
+
+        <br>
+
+        <a href="{{ url_for('all_teams') }}">
+            <button type="button">
+                Back to All Teams
+            </button>
+        </a>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 ProjectMate | Smart Project Team Formation &
+            Collaboration System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
