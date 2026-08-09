@@ -1,14 +1,14 @@
 # ProjectMate – Smart Project Team Formation & Collaboration System
 
-## Project Overview
+## 📌 Project Overview
 
-ProjectMate is a web-based project team formation and collaboration system developed to help students find suitable project teammates based on their skills and interests.
+**ProjectMate** is a web-based project team formation and collaboration system developed to help students find suitable project teammates based on their skills and interests.
 
 The system allows students to create profiles, add technical skills, find teammates, create teams, manage projects, assign tasks, and provide feedback.
 
 Faculty members can monitor student teams and projects, while administrators can manage students, faculty, teams, and projects.
 
-## Objectives
+## 🎯 Objectives
 
 * To make project team formation easier for students.
 * To find suitable team members based on technical skills.
@@ -17,9 +17,9 @@ Faculty members can monitor student teams and projects, while administrators can
 * To help faculty monitor student projects and teams.
 * To provide centralized administration of the system.
 
-## Key Features
+## 🚀 Key Features
 
-### Student Module
+### 👩‍🎓 Student Module
 
 * Student registration and login
 * Student profile management
@@ -33,7 +33,7 @@ Faculty members can monitor student teams and projects, while administrators can
 * View project details
 * Submit feedback
 
-### Faculty Module
+### 👨‍🏫 Faculty Module
 
 * Faculty registration and login
 * Faculty dashboard
@@ -42,7 +42,7 @@ Faculty members can monitor student teams and projects, while administrators can
 * Monitor project information
 * View student feedback
 
-### Admin Module
+### 👨‍💼 Admin Module
 
 * Admin login
 * Admin dashboard
@@ -51,7 +51,7 @@ Faculty members can monitor student teams and projects, while administrators can
 * Manage teams
 * Manage projects
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 | Technology | Purpose                |
 | ---------- | ---------------------- |
@@ -64,7 +64,7 @@ Faculty members can monitor student teams and projects, while administrators can
 | Git        | Version Control        |
 | GitHub     | Source Code Management |
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 ProjectMate/
@@ -75,6 +75,17 @@ ProjectMate/
 │
 ├── database/
 │   └── projectmate.db
+│
+├── screenshots/
+│   ├── home.png
+│   ├── student-dashboard.png
+│   ├── student-profile.png
+│   ├── student-skills.png
+│   ├── team-suggestion.png
+│   ├── my-team.png
+│   ├── project-details.png
+│   ├── faculty-dashboard.png
+│   └── admin-dashboard.png
 │
 ├── static/
 │   └── style.css
@@ -100,45 +111,46 @@ ProjectMate/
     ├── admin_dashboard.html
     └── ...
 ```
-## Screenshots
 
-### Home Page
+## 📸 Screenshots
+
+### 🏠 Home Page
 
 ![ProjectMate Home Page](screenshots/home.png)
 
-### Student Dashboard
+### 👩‍🎓 Student Dashboard
 
 ![Student Dashboard](screenshots/student-dashboard.png)
 
-### Student Profile
+### 👤 Student Profile
 
 ![Student Profile](screenshots/student-profile.png)
 
-### Student Skills
+### 🛠️ Student Skills
 
 ![Student Skills](screenshots/student-skills.png)
 
-### Team Suggestion
+### 🤝 Team Suggestion
 
 ![Team Suggestion](screenshots/team-suggestion.png)
 
-### My Team
+### 👥 My Team
 
 ![My Team](screenshots/my-team.png)
 
-### Project Details
+### 📋 Project Details
 
 ![Project Details](screenshots/project-details.png)
 
-### Faculty Dashboard
+### 👨‍🏫 Faculty Dashboard
 
 ![Faculty Dashboard](screenshots/faculty-dashboard.png)
 
-### Admin Dashboard
+### 👨‍💼 Admin Dashboard
 
 ![Admin Dashboard](screenshots/admin-dashboard.png)
 
-## Installation and Setup
+## ⚙️ Installation and Setup
 
 ### 1. Clone the Repository
 
@@ -186,7 +198,7 @@ Open the following URL in your browser:
 http://127.0.0.1:5000/
 ```
 
-## System Workflow
+## 🔄 System Workflow
 
 ```text
 Student Registration
@@ -208,7 +220,7 @@ Manage Project
 Submit Feedback
 ```
 
-## Benefits
+## 💡 Benefits
 
 * Makes team formation easier.
 * Supports skill-based team selection.
@@ -217,7 +229,7 @@ Submit Feedback
 * Helps faculty monitor student projects.
 * Provides centralized project information.
 
-## Future Enhancements
+## 🔮 Future Enhancements
 
 * AI-based team recommendation
 * Advanced skill matching
@@ -229,7 +241,7 @@ Submit Feedback
 * Mobile application
 * Online project evaluation
 
-## Project Information
+## 📚 Project Information
 
 **Project Name:** ProjectMate
 
@@ -239,12 +251,12 @@ Submit Feedback
 
 **Technologies:** Python, Flask, SQLite, HTML, CSS
 
-## Developer
+## 👩‍💻 Developer
 
 **Sri**
 
 BCA Final Year Project
 
-## License
+## 📄 License
 
 This project is developed for academic and educational purposes.
