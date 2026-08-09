@@ -126,6 +126,10 @@ ProjectMate/
 
 ![My Team](screenshots/my-team.png)
 
+### Project Details
+
+![Project Details](screenshots/project-details.png)
+
 ## Installation and Setup
 
 ### 1. Clone the Repository
