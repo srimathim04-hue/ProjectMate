@@ -1,5 +1,9 @@
 # ProjectMate – Smart Project Team Formation & Collaboration System
 
+## 🌐 Live Demo
+
+[🚀 Open ProjectMate](https://projectmate-m6ux.onrender.com)
+
 ## 📌 Project Overview
 
 **ProjectMate** is a web-based project team formation and collaboration system developed to help students find suitable project teammates based on their skills and interests.
