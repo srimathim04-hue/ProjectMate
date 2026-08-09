@@ -134,6 +134,10 @@ ProjectMate/
 
 ![Faculty Dashboard](screenshots/faculty-dashboard.png)
 
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
 ## Installation and Setup
 
 ### 1. Clone the Repository
